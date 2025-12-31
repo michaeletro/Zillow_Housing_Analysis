@@ -205,3 +205,9 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Project specific - generated data and models
+zillow_analysis/data/*.csv
+zillow_analysis/data/*.json
+zillow_analysis/data/*.pkl
+zillow_analysis/data/*.png
