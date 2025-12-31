@@ -73,15 +73,15 @@ def calculate_derived_features(df: pd.DataFrame) -> pd.DataFrame:
     
     # Price per square foot
     if 'price' in df.columns and 'living_area' in df.columns:
-        df['price_per_sqft'] = df['price'] / df['living_area']
+        df['price_per_sqft'] = df['price'] / (df['living_area'] + 1)
     
     # Bathroom to bedroom ratio
     if 'bathrooms' in df.columns and 'bedrooms' in df.columns:
-        df['bath_bed_ratio'] = df['bathrooms'] / df['bedrooms']
+        df['bath_bed_ratio'] = df['bathrooms'] / (df['bedrooms'] + 1)
     
     # Lot to living area ratio
     if 'lot_size' in df.columns and 'living_area' in df.columns:
-        df['lot_living_ratio'] = df['lot_size'] / df['living_area']
+        df['lot_living_ratio'] = df['lot_size'] / (df['living_area'] + 1)
     
     # Price to tax assessment ratio
     if 'price' in df.columns and 'tax_assessed_value' in df.columns:
